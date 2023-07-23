@@ -1,20 +1,14 @@
-import "./Home.css";
+import HomeNavigationBar from "../../components/shared/navigation/HomeNavigationBar.jsx";
+import NavigationLinks from "../../components/shared/navigation/NavigationLinks.js";
 
 const Home = () => {
     return (
-        <div className="body">
-            <section className="header">
-                <nav>
-                    <img src="src/assets/UniversityLogo.png" alt="logo" className="logo"/>
-                    <ul>
-                        <li><a href="">Home</a></li>
-                        <li><a href="/login-and-student-registration">LogIn And Registration</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
-                    </ul>
-                </nav>
-            </section>
-        </div>
+        <HomeNavigationBar
+            links={NavigationLinks("home")}
+            backgroundImage="login.jpg"
+        >
+            <h1>Home</h1>
+        </HomeNavigationBar>
     );
 }
 

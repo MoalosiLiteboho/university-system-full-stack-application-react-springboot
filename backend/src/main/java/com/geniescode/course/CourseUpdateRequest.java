@@ -1,4 +1,9 @@
 package com.geniescode.course;
 
-public record CourseUpdateRequest() {
+import java.time.LocalDate;
+
+public record CourseUpdateRequest(
+        String name,
+        String description,
+        LocalDate retire) {
 }

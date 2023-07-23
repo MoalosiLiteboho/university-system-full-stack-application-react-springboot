@@ -1,14 +1,7 @@
 package com.geniescode.user;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,9 +22,21 @@ public class UserController {
         return userService.findUserById(userId);
     }
 
-    @PostMapping("registration")
+    @GetMapping("{userId}/user-name")
+    public String getUserNameById(
+            @PathVariable("userId") Integer userId) {
+        return userService.findUserNamesById(userId);
+    }
+
+    @PostMapping("user-registration")
     public void registerUser(
             @RequestBody UserRegistrationRequest request) {
+        userService.registerUser(request);
+    }
+
+    @PostMapping("student-registration")
+    public void registerStudent(
+            @RequestBody StudentRegistrationRequest request) {
         userService.registerUser(request);
     }
 

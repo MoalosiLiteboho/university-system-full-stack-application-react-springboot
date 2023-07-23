@@ -1,9 +1,7 @@
 package com.geniescode.user;
 
-import com.geniescode.gender.Gender;
-import com.geniescode.roles.Roles;
-
 import java.time.LocalDate;
+import java.util.List;
 
 public record UserDTO(
         Integer id,
@@ -11,6 +9,6 @@ public record UserDTO(
         String lastname,
         LocalDate dateOfBirth,
         String email,
-        Gender gender,
-        Roles roles) {
+        UserGender gender,
+        List<String> roles) {
 }

@@ -1,4 +1,10 @@
 package com.geniescode.material;
 
-public record MaterialAddRequest() {
+import org.springframework.web.multipart.MultipartFile;
+
+public record MaterialAddRequest(
+        Integer courseId,
+        Integer instructorId,
+        String tittle,
+        MultipartFile file) {
 }

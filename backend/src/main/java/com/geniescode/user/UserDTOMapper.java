@@ -1,5 +1,6 @@
 package com.geniescode.user;
 
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
 import java.util.function.Function;
@@ -15,7 +16,10 @@ public class UserDTOMapper implements Function<User, UserDTO> {
                 user.getDateOfBirth(),
                 user.getEmail(),
                 user.getGender(),
-                user.getRoles()
+                user.getAuthorities()
+                        .stream()
+                        .map(GrantedAuthority::getAuthority)
+                        .toList()
         );
     }
 }

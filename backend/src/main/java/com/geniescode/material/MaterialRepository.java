@@ -1,4 +1,8 @@
 package com.geniescode.material;
 
-public interface MaterialRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.transaction.annotation.Transactional;
+
+@Transactional
+public interface MaterialRepository extends JpaRepository<Material, Integer> {
 }
